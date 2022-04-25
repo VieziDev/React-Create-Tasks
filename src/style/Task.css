@@ -12,3 +12,10 @@
 .task-title{
     cursor: pointer;
 }
+
+.remote-task-button{
+    background-color: #444;
+    border: none;
+    font-size: 16px;
+    color: chartreuse;
+}

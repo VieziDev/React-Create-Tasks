@@ -1,7 +1,7 @@
 import React from "react";
 import "../style/Task.css";
 
-const Task = ({ task, handleTaskClick }) => {
+const Task = ({ task, handleTaskClick, handleTaskDeletion}) => {
   return (
     <div
       className="task-container"
@@ -9,6 +9,10 @@ const Task = ({ task, handleTaskClick }) => {
     >
       <div className="task-title" onClick={() => handleTaskClick(task.id)}>
         {task.title}
+      </div>
+
+      <div className="buttons-container">
+        <button className="remote-task-button" onClick={() => handleTaskDeletion(task.id)}>X</button>
       </div>
     </div>
   );
