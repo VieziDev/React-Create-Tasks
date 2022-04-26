@@ -1,20 +1,27 @@
 import React from "react";
 import { CgClose, CgInfo } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
 import "../style/Task.css";
 
 const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
+  const navigate = useNavigate();
+
+  const handleTaskDetailsClick = () =>{
+    navigate(`/${task.title}`)
+  }
+
   return (
     <div
       className="task-container"
-      style={task.completed ? { borderLeft: "6px solid chartreuse" } : {}}
+      style={task.completed ? { borderLeft: "6px solid chartreuse", transition: "all 0.2s ease"} : {}}
     >
       <div className="task-title" onClick={() => handleTaskClick(task.id)}>
         {task.title}
       </div>
 
       <div className="buttons-container">
-        <button className="see-task-details-button">
-          <CgInfo />
+        <button className="see-task-details-button"  onClick={handleTaskDetailsClick}>
+          <CgInfo/>
         </button>
         <button
           className="remote-task-button"
