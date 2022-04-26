@@ -1,11 +1,15 @@
+//Libs
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+//Components
+import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
+//Style
+import "./App.css";
 
 const App = () => {
-  // const message = "Hello World"
   const [tasks, setTasks] = useState([
     {
       id: "1",
@@ -43,18 +47,33 @@ const App = () => {
   };
 
   const handleTaskDeletion = (taskId) => {
-    const newTasks = tasks.filter(task => task.id != taskId)
+    const newTasks = tasks.filter((task) => task.id !== taskId);
 
     setTasks(newTasks);
-  }
+  };
 
   return (
-    <>
+    <Router>
       <div className="container">
-        <AddTask handleTaskAddition={handleTaskAddition} />
-        <Tasks tasks={tasks} handleTaskClick={handleTaskClick} handleTaskDeletion={handleTaskDeletion}/>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={
+              <>
+                <AddTask handleTaskAddition={handleTaskAddition} />
+                <Tasks
+                  tasks={tasks}
+                  handleTaskClick={handleTaskClick}
+                  handleTaskDeletion={handleTaskDeletion}
+                />
+              </>
+            }
+          />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 };
 
