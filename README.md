@@ -35,7 +35,7 @@ To Visit App:
 
 ## Task Manager
 ## Linguagem:
-PT/BR :br:
+PT/BR :brazil:
 #### Tecnologias usadas:
 
 HTML, CSS, JavaScript, React.Js
