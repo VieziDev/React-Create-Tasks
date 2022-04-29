@@ -1,5 +1,6 @@
 import React from "react";
-import { CgClose, CgInfo } from "react-icons/cg";
+import { CgClose, CgInfo, GiConfirmed } from "react-icons/cg";
+import { icons } from "react-icons/lib";
 import { useNavigate } from "react-router-dom";
 import "../style/Task.css";
 
@@ -13,7 +14,7 @@ const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
   return (
     <div
       className="task-container"
-      style={task.completed ? { borderLeft: "6px solid chartreuse", transition: "all 0.2s ease"} : {}}
+      style={task.completed ? { borderLeft: "50px solid chartreuse", transition: "all 0.2s ease"} : {}}
     >
       <div className="task-title" onClick={() => handleTaskClick(task.id)}>
         {task.title}

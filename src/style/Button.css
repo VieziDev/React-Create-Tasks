@@ -15,5 +15,5 @@
 .button:hover{
     background-color: #444;
     color: chartreuse;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 3px 3px 3px chartreuse;
 }

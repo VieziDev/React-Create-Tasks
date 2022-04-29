@@ -11,6 +11,11 @@
 
 .task-title{
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.task-title:hover{
+    text-shadow: 2px 2px 2px chartreuse;
 }
 
 .buttons-container{
@@ -33,4 +38,5 @@
 .remote-task-button:hover{
     color: rgb(255, 100, 100);
 }
+
 
